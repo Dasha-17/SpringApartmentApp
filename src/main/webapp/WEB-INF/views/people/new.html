@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Новый клиент</title>
+    <link rel="stylesheet" href="/resources/css/styles.css">
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <article>
+        <div class="container">
+            <h1><span>Создание<br>клиента</span></h1>
+        </div>
+        <form th:method="POST" th:action="@{/people}" th:object="${person}">
+            <label for="name">Имя клиента</label>
+            <input th:field="*{name}" type="text" id="name">
+            <div class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+            <br/>
+            <label for="age">Возраст клиента</label>
+            <input th:field="*{age}" type="number" id="age">
+            <div class="error" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></div>
+            <br/>
+            <label for="email">email клиента</label>
+            <input th:field="*{email}" type="text" id="email">
+            <div class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+
+            <br/>
+            <div class="button-container">
+            <button type="submit">Создать нового клиента</button>
+            </div>
+        </form>
+    </article>
+</main>
+</body>
+</html>

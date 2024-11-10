@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8"/>
+    <title>Новые апартаменты</title>
+    <link rel="stylesheet" href="/resources/css/styles.css">
+</head>
+<body>
+<main>
+    <article>
+<div class="container">
+    <h1><span>Создание<br>клиента</span></h1>
+</div>
+<form th:method="POST" th:action="@{/apartments}" th:object="${apartment}">
+    <label for="number">Введите номер апартаментов: </label>
+    <input type="text" th:field="*{number}" id="number"/>
+    <div style="color:red" th:if="${#fields.hasErrors('number')}" th:errors="*{number}">Ошибка в номере апартаментов</div>
+    <br/>
+
+    <label for="floor">Введите этаж: </label>
+    <input type="text" th:field="*{floor}" id="floor"/>
+    <div style="color:red" th:if="${#fields.hasErrors('floor')}" th:errors="*{floor}">Ошибка в номере этажа</div>
+    <br/>
+
+    <label for="size">Введите размер (м²): </label>
+    <input type="text" th:field="*{size}" id="size"/>
+    <div style="color:red" th:if="${#fields.hasErrors('size')}" th:errors="*{size}">Ошибка в размере</div>
+    <br/>
+
+
+    <div class="button-container">
+        <button type="submit">Создать новые апартаменты</button>
+    </div>
+</form>
+    </article>
+</main>
+</body>
+</html>

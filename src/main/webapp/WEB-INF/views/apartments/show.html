@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+    <title>Показать</title>
+    <link rel="stylesheet" href="/resources/css/styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1><span>Информация<br>об апартаментах</span></h1>
+    <p th:text="'Номер апартаментов: ' + ${apartment.getNumber()} + ', Этаж: ' + ${apartment.getFloor()} + ', Площадь номера: ' + ${apartment.getSize()} + ' м²'"></p>
+
+<div th:if="${owner}">
+    <span>Апартамент занят клиентом: </span> <span th:text="${owner.getName()}">Имя клиента</span>
+    <div class="button-container">
+    <form th:method="PATCH" th:action="@{/apartments/{id}/release(id=${apartment.getId()})}">
+        <button type="submit">Освободить номер</button>
+    </form>
+</div>
+</div>
+
+<div th:if="${people}">
+    <span>Этот номер свободен. Для какого клиента забронировать его?</span>
+    <form th:method="PATCH" th:action="@{/apartments/{id}/assign(id=${apartment.getId()})}">
+        <label for="person">Выберите клиента</label>
+        <select th:field="*{id}" id="person">
+            <option th:each="person : ${people}" th:value="${person.getId()}" th:text="${person.getName()}">
+            </option>
+        </select>
+        <div class="button-container">
+            <button type="submit">Забронировать номер</button>
+        </div>
+    </form>
+</div>
+
+    <div class="button-container">
+<form th:method="GET" th:action="@{/apartments/{id}/edit(id=${apartment.getId()})}">
+    <button type="submit">Редактировать</button>
+</form>
+
+<form th:method="DELETE" th:action="@{/apartments/{id}(id=${apartment.getId()})}">
+    <button type="submit">Удалить</button>
+</form>
+    </div>
+</div>
+</body>
+</html>

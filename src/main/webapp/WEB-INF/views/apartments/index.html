@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+    <title>Книги</title>
+    <link rel="stylesheet" href="/resources/css/styles.css">
+</head>
+<body>
+<main>
+    <article>
+        <div class="container">
+            <h1><span>Список<br>апартаментов</span></h1>
+            <p class="subtitle">Выберете апартаменты для редоктирования</p>
+        </div>
+        <div th:each="apartment : ${apartments}">
+            <a th:href="@{/apartments/{id} (id=${apartment.getId()})}"
+               th:text="'Номер апартаментов: ' + ${apartment.getNumber()} + ', Этаж: ' + ${apartment.getFloor()} + ', Площадь номера: ' + ${apartment.getSize()} + ' м²'"></a>
+
+        </div>
+        <br>
+        <hr>
+        <div class="button-container">
+        <a th:href="@{/apartments/new}">Создать новые апартаменты</a>
+        </div>
+    </article>
+</main>
+</body>
+</html>

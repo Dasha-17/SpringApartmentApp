@@ -1,0 +1,195 @@
+
+h1 span{width:100%;position:relative}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Контейнер с текстом */
+.container {
+    position: relative;
+    text-align: center;
+    color: #0e0e0e;
+}
+
+/* Стиль для заголовка */
+.container h1 {
+    font-size: 70px;
+    font-weight: 800;
+    color: #00071c;
+    text-align: center
+}
+.container h1 span {
+    display: inline-block;
+}
+/* Кнопки */
+.button-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+   }
+
+.button-container a {
+    color: black;
+    text-decoration: none;
+    background-color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s, opacity 0.3s;
+    opacity: 0.9;  /* Уменьшаем прозрачность */
+}
+
+.button-container a:hover {
+    background-color: #f0f0f0; /* Смените на желаемый цвет */
+    opacity: 1;  /* Полностью непрозрачная при наведении */
+}
+
+.button-container a:hover {
+    background-color: #ff6a00;
+}
+
+/* Подзаголовок */
+.subtitle {
+    font-size: 1.5em;
+    color: #333; /* Яркий цвет текста */
+    margin-top: 20px;
+    opacity: 1;  /* Убедимся, что текст непрозрачен */
+}
+
+
+/* Стили для списка людей */
+div > a {
+    display: block;
+    padding: 10px;
+    margin: 10px 0;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #333;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+div > a:hover {
+    background-color: #ff6a00; /* Зеленый фон на наведение */
+    color: white; /* Белый текст на наведение */
+}
+
+/* Стиль для горизонтальной линии */
+hr {
+    margin: 30px auto;
+    width: 80%;
+    border-color: #ddd;
+}
+
+/* Стили для формы */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+/* Стиль для меток */
+label {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* Стиль для полей ввода */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+/* Фокус на полях ввода */
+input:focus {
+    border-color: #ff6a00;
+    outline: none;
+}
+
+/* Стиль для ошибок */
+.error {
+    font-size: 0.9em;
+    color: red;
+    margin-top: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #000c39;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Эффект на кнопку при наведении */
+button:hover {
+    background-color: #ff6a00;
+}
+
+
+
+p {
+    font-size: 1.2em;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* Сообщение об отсутствии брони */
+p.no-apartment {
+    color: #777;
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+/* Таблица номеров */
+table {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-size: 1em;
+}
+
+table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+table tr:last-child {
+    border-bottom: none;
+}
+
+table tr th, table tr td {
+    padding: 10px;
+    text-align: left;
+    color: #333;
+}
+
+/* Кнопки формы */
+form {
+    display: inline-block;
+    margin: 10px 5px;
+}

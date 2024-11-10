@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Главная страница</title>
+  <link rel="stylesheet" href="/resources/css/styles.css">
+</head>
+<body>
+<div class="container">
+
+  <h1><span>Добро<br>пожаловать</span></h1>
+
+  <!-- Добавляем текст под заголовок -->
+  <p class="subtitle">Выберите раздел</p>
+
+  <div class="button-container">
+    <a th:href="@{/people}">Люди</a>
+    <a th:href="@{/apartments}">Апартаменты</a>
+  </div>
+
+
+</div>
+
+</body>
+</html>
